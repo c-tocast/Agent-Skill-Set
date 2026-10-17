@@ -1,6 +1,6 @@
 ---
 
-name: prompting-architectural-intent-classifier
+name: Bustamante_Matrix_architectural_intent_classifier
 
 description: "Classifies prompt drafts by architectural layer (System Prompt vs. User Prompt vs. Modular Pre-Prompt), assigning a behavioral consistency weight (~70% vs. ~30%) and preventing override risks or boundary leakage. Architectural Intent Classifier, system prompt vs. user prompt, behavioral consistency weight, modular pre-prompts, override protection."
 

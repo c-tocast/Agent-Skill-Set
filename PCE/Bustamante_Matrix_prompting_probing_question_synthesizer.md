@@ -355,7 +355,9 @@ Assumption Declarer: Documents the default operational hypothesis for each uncer
 ### Related Skills
 
 `Bustamante_Matrix_prompting_intent_classifier` - Classification of the prompt’s intent 
+
 `Bustamante_Matrix_skeleton_of_thought_planner.md` - Early identification of gaps in planning
+
 `Bustamante_Matrix_prompting_self_corrected_compiler` - Compilation of the optimized final prompt
 
 ### Limitations

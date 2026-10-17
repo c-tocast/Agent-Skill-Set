@@ -309,8 +309,11 @@ Required structure for Part 2 of the PCE diagnostic framework:
 ### Related Skills
 
 `Bustamante_Matrix_skeleton_of_thought_planner` - Advance planning of thought nodes
+
 `prompting-four-pillars-diagnostic` - Structural audit under the Four Pillars framework
+
 `Bustamante_Matrix_prompting_self_corrected_compiler` - Final compilation of the corrected prompt
+
 `Bustamante_Matrix_prompting_probing_question_synthesizer` - Formulation of verification questions
 
 ### Limitations

@@ -3,7 +3,7 @@ name: prompting-skeleton-of-thought-planner
 description: "Deconstructs complex prompt engineering challenges into a structured Skeleton-of-Thought (SoT) skeleton roadmap before writing, balancing computational cost, reasoning depth, latency, and token efficiency for multi-agent workflows. Planificador Skeleton of Thought, descomposición de pensamiento, hoja de ruta de prompts, balance costo precisión, planificación previa de prompts."
 category: prompting
 risk: safe
-source: community
+source: c-tocast
 date_added: "2026-10-16"
 ---
 # Skeleton-of-Thought Planner

@@ -196,8 +196,8 @@ SoT Node Auditor: Verifies full coverage of requirements before drafting
 3. Always prioritize providing context before the specific task when processing lengthy documents.
 4. If latency is critical, eliminate intermediate cosmetic formatting steps and focus on the functional core.
 5. Verify that the skeleton includes an explicit node for formulating verification questions.
-6. Consult `prompting-architectural-intent-classifier` to determine the prompt layer before finalizing the plan.
-7. Connect to `prompting-self-corrected-compiler` to compile the final draft following the skeleton’s nodes.
+6. Consult `Bustamante_Matrix_prompting_intent_classifier` to determine the prompt layer before finalizing the plan.
+7. Connect to `Bustamante_Matrix_prompting_self_corrected_compiler` to compile the final draft following the skeleton’s nodes.
 
 ### Mandatory Structure for Part 1 of the PCE Diagnostic Framework:Markdown
 ### 1. Skeleton-of-Thought
@@ -224,9 +224,9 @@ SoT Node Auditor: Verifies full coverage of requirements before drafting
 4. Deliver this analysis as the essential Part 1 of the PCE diagnostic framework.
 
 ### Related Skills
-`prompting-architectural-intent-classifier` - Classification of the prompt’s intent 
-`layer@prompting-probing-question-synthesizer` - Formulation of verification questions
-`prompting-self-corrected-compiler` - Compilation of the optimized final prompt
+`Bustamante_Matrix_prompting_intent_classifier` - Classification of the prompt’s intent 
+`Bustamante_Matrix_prompting_probing_question_synthesizer` - Formulation of verification questions
+`Bustamante_Matrix_prompting_self_corrected_compiler` - Compilation of the optimized final prompt
 
 ### Limitations
 

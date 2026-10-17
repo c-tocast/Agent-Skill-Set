@@ -8,7 +8,7 @@ category: prompting
 
 risk: safe
 
-source: community
+source: c-tocast
 
 date_added: “2026-10-16”
 

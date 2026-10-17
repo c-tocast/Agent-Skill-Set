@@ -1,6 +1,6 @@
 ---
 
-name: Bustamante_Matrix_architectural_intent_classifier
+name: Architectural_intent_classifier
 
 description: "Classifies prompt drafts by architectural layer (System Prompt vs. User Prompt vs. Modular Pre-Prompt), assigning a behavioral consistency weight (~70% vs. ~30%) and preventing override risks or boundary leakage. Architectural Intent Classifier, system prompt vs. user prompt, behavioral consistency weight, modular pre-prompts, override protection."
 
@@ -308,13 +308,13 @@ Required structure for Part 2 of the PCE diagnostic framework:
 
 ### Related Skills
 
-`Bustamante_Matrix_skeleton_of_thought_planner` - Advance planning of thought nodes
+`Skeleton_of_thought_planner` - Advance planning of thought nodes
 
 `prompting-four-pillars-diagnostic` - Structural audit under the Four Pillars framework
 
-`Bustamante_Matrix_prompting_self_corrected_compiler` - Final compilation of the corrected prompt
+`Prompting_self_corrected_compiler` - Final compilation of the corrected prompt
 
-`Bustamante_Matrix_prompting_probing_question_synthesizer` - Formulation of verification questions
+`Prompting_probing_question_synthesizer` - Formulation of verification questions
 
 ### Limitations
 

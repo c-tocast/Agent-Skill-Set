@@ -1,5 +1,5 @@
 ---
-name: prompting-skeleton-of-thought-planner
+name: Bustamante_Matrix_skeleton_of_thought_planner
 description: "Deconstructs complex prompt engineering challenges into a structured Skeleton-of-Thought (SoT) skeleton roadmap before writing, balancing computational cost, reasoning depth, latency, and token efficiency for multi-agent workflows. Planificador Skeleton of Thought, descomposición de pensamiento, hoja de ruta de prompts, balance costo precisión, planificación previa de prompts."
 category: prompting
 risk: safe

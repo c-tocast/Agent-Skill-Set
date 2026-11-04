@@ -1,0 +1,267 @@
+UNDER DEVELOPMENT ** `Prompting-four-pillars-diagnostic` ** IS NOT CREATED YET
+
+---
+name: logic-inductive-statistical-auditor
+description: "Audits inductive generalizations, sample size sufficiency, sample representativeness, statistical syllogisms, confidence intervals, logical analogies, and abductive reasoning based on Chapter 1 of Bustamante. Auditar generalización inductiva, falacia de muestra insuficiente, representatividad de muestra, margen de error, nivel de confianza, refutación por analogía, razonamiento abductivo."
+category: logic
+risk: safe
+source: c-tocast
+date_added: "2026-11-04"
+---
+
+# Inductive & Statistical Auditor
+
+Audita sistemáticamente los argumentos inductivos, estadísticos, analógicos y abductivos dentro de prompts o especificaciones técnicas, evitando generalizaciones apresuradas y conclusiones taxativas sin soporte empírico.
+
+## When to Use This Skill
+
+- Un prompt o análisis extrae conclusiones universales o taxativas a partir de unos pocos casos observados
+- Se requiere evaluar si el tamaño de una muestra (`n`) y su diversidad son representativos de la población (`N`)
+- El texto incluye porcentajes estadísticos, encuestas con margen de error o niveles de confianza mal interpretados
+- Se necesita construir o auditar una refutación mediante analogía lógica o una hipótesis por razonamiento abductivo
+- PCE o Gus auditan la fuerza inductiva de las premisas en un diseño de ciencia de datos o ingeniería
+
+## The Auditing Process
+
+# 1. Identify the Inductive or Statistical Structure
+
+Primero, separa las premisas empíricas de la conclusión generalizada:
+
+```
+1. Localiza los indicadores de premisa ("dado que", "como resultado de", "se observó en")
+2. Localiza los indicadores de conclusión ("por lo tanto", "en consecuencia", "es razonable pensar que")
+3. Explicita las premisas implícitas que el autor dio por sentadas
+4. Verifica que no se confunda un enunciado condicional aislado con un razonamiento completo
+5. Clasifica el argumento en: generalización inductiva, estadístico, por analogía o abductivo
+```
+
+Si la estructura no es evidente, recopila más contexto:
+- ¿Cuál es la población total objetivo (`N`)?
+- ¿Cuál es el tamaño exacto de la muestra observada (`n`)?
+- ¿La conclusión está redactada de forma taxativa o probabilística?
+- ¿Qué características relevantes diversifican a la población?
+
+# 2. Gather Evidence on Sample Size and Representativeness
+
+Recopila todos los parámetros muestrales y poblacionales presentes en el texto:
+
+**Evalúa los tres criterios formales de Bustamante:**
+```yaml
+inductive_criteria_check:
+  premise_truth: "¿Son verdaderas las observaciones de partida?"
+  sample_size: "¿Es n suficientemente grande frente a N? (ej. n=8 o n=12 en N=1099 es insuficiente)"
+  representativeness: "¿Cubre la muestra las variaciones de región, estrato, entorno o arquitectura?"
+```
+
+**Comprueba sesgos de selección en la evidencia:**
+- Muestra tomada de un único foro regional o de un solo tipo de institución
+- Población heterogénea tratada erróneamente como homogénea (a diferencia de una gota de sangre o un sorbo de sopa)
+- Omisión del número total de elementos observados (ej. "ninguno de los computadores de mi sección ha fallado")
+
+**Comprueba parámetros de encuestas:**
+- Porcentaje medido en la muestra (`p`)
+- Margen de error declarado (`e`)
+- Nivel de confianza (`C%`) sobre la repetición del muestreo
+
+# 3. Form a Diagnostic Hypothesis
+
+Con base en la evidencia, formula el diagnóstico exacto sobre la debilidad del argumento:
+
+```
+"El prompt incurre en la falacia de la muestra insuficiente (generalización apresurada)
+porque extiende a miles de casos lo observado en sólo 12 instancias"
+
+"El argumento falla al criterio de representatividad porque consulta a amantes del
+chocolate para inferir el consumo promedio de dulces de toda la ciudad"
+
+"La conclusión estadística de 55% se presenta como segura cuando, por estar tan cerca
+del umbral de 50%, resulta formalmente poco confiable"
+```
+
+# 4. Test the Statistical and Modal Strength
+
+Comprueba la fuerza del argumento frente a los umbrales cuantitativos y modales:
+
+**Verifica el umbral porcentual y calificadores modales:**
+```yaml
+statistical_evaluation:
+  strong_threshold: "Porcentaje poblacional > 50%"
+  unreliable_zone: "Porcentaje cercano al 50% (ej. 55%) -> Fuerte según el estándar, pero POCO CONFIABLE"
+  high_reliability: "Porcentaje lejano al 50% (ej. 75% a 95%) con calificador modal"
+  mandatory_modals: ["posiblemente", "probablemente", "es muy posible que", "es razonable concluir que"]
+```
+
+**Verifica la lectura de margen de error y confianza:**
+```yaml
+survey_reading_test:
+  observed_value: "75% (ej. 30 de 40 personas)"
+  margin_of_error: "10% -> Rango real poblacional: [65%, 85%] (entre 26 y 34 de cada 40)"
+  confidence_level: "90% -> En al menos 18 de 20 repeticiones de la encuesta el resultado cae en el rango"
+```
+
+### 5. Find Root Cause of Argumentative Failure
+
+Rastrea el defecto hasta su categoría lógica exacta:
+
+**Causas raíz inductivas frecuentes:**
+- Enunciado taxativo absoluto que se vuelve falso ante la más mínima desviación numérica
+- Falacia de la generalización apresurada (muestra insuficiente)
+- Falta al criterio de representatividad de la muestra
+- Falta al criterio de verdad de las premisas (ej. premisa empíricamente absurda)
+- Falsa suma de margen de error más nivel de confianza pretendiendo obtener 100%
+- Confusión entre disponibilidad de un recurso y uso efectivo del mismo en una analogía
+
+**Ejemplo de trazabilidad lógica:**
+```
+Síntoma: El prompt afirma "El 75% de los alcaldes del país tiene posgrado" tras encuestar a 8 de 30 en un foro regional
+↓
+Dónde: Conclusión del bloque de contexto analítico
+↓
+Por qué falla 1: El enunciado es taxativo (sin "probablemente"), cualquier variación lo hace falso
+↓
+Por qué falla 2: Muestra n=8 es insuficiente para una población N=1099 municipios
+↓
+Causa raíz: Falacia de muestra insuficiente combinada con no representatividad regional y ausencia de calificador modal
+```
+
+### 6. Implement Fix
+
+Corrige la formulación lógica y el diseño muestral en el prompt o especificación:
+
+**Bad fix (mantener conclusión taxativa sobre muestra sesgada):**
+```yaml
+# Incorrecto: Dejar una afirmación absoluta basada en un caso aislado
+conclusion_rule: "Como me cayó mal un tamal en el restaurante de Ana, toda la comida de ese restaurante es terrible."
+```
+
+**Good fix (acotar alcance, exigir muestra representativa y añadir calificador modal):**
+```yaml
+# Correcto: Aplicar calificadores modales y exigir estratificación representativa
+conclusion_rule: "Si el porcentaje poblacional verificado supera ampliamente el 50% en una muestra estratificada y representativa, formula la conclusión empleando 'es muy posible que' o 'es razonable concluir que', especificando el intervalo [p - e, p + e]."
+```
+
+### 7. Test the Fix
+
+Verifica que la versión corregida supere los controles de argumentación:
+
+```
+1. Revisa el argumento original defectuoso
+2. Aplica la reformulación con calificadores modales y acotación muestral
+3. Comprueba que una desviación mínima de 1 individuo ya no destruya la verdad formal del enunciado
+4. Verifica la distinción entre validez deductiva y fuerza inductiva
+5. Audita que el margen de error amplíe el rango y no se sume con el nivel de confianza
+6. Ejecuta la validación contra el esquema de 5 partes de PCE
+```
+
+### 8. Prevent Regression
+
+Añade una regla invariante en el bloque `<constraints>` del prompt optimizado:
+
+```xml
+<constraint id="inductive-rigor">
+Prohibido emitir generalizaciones taxativas a partir de muestras pequeñas o no representativas. Toda inferencia estadística debe reportar tamaño muestral, diversidad poblacional, rango de margen de error y utilizar operadores modales probabilísticos.
+</constraint>
+```
+
+## Auditing Techniques
+
+### Refutation by Logical Analogy
+
+Desmonta un argumento defectuoso construyendo un argumento paralelo con exactamente la misma estructura pero cuya invalidez sea evidente (ej. refutar "Grecia era agrícola porque su tierra era fértil" mostrando que equivale a afirmar que "alguien come mucho helado sólo porque en su casa tiene mucho helado").
+
+### Abductive Hypothesis Ranking
+
+Ante un síntoma o hecho observado, genera múltiples hipótesis explicativas plausibles y selecciona la mejor explicación sin confundirla jamás con una deducción necesaria.
+
+### Diagrammatic Argument Mapping
+
+Numera cada proposición simple del texto y traza flechas desde las premisas convergentes o dependientes hacia la conclusión para exponer premisas huérfanas o circulares.
+
+## Common Fallacy Patterns
+
+### Hasty Generalization (Insufficient Sample)
+
+```yaml
+# Bug Argumentativo
+input_claim: "9 de 12 egresados provienen de estrato 4; por tanto, el 75% de todos los miles de estudiantes proviene de estrato 4."
+
+# Fix Argumentativo
+corrected_claim: "La muestra de 12 estudiantes es insuficiente y no representativa de la población total; se requiere muestreo estratificado antes de inferir proporciones poblacionales."
+```
+
+### Taxative vs. Modal Statistical Conclusion
+
+```yaml
+# Bug Argumentativo
+input_claim: "30 de 40 alcaldes tienen posgrado; por lo tanto, exactamente el 75% de los 1099 alcaldes tiene posgrado."
+
+# Fix Argumentativo
+corrected_claim: "Con base en una muestra representativa a nivel nacional, es razonable concluir que aproximadamente el 75% (con margen de error +/- e) cuenta con estudios de posgrado."
+```
+
+### Misinterpreting Margin of Error
+
+```yaml
+# Bug Argumentativo
+input_claim: "Margen de error 10% y nivel de confianza 90% es correcto porque 10% + 90% = 100%."
+
+# Fix Argumentativo
+corrected_claim: "A mayor margen de error, mayor es el rango dentro del cual se encuentra la medición real de la población; el nivel de confianza indica la frecuencia de éxito al repetir el muestreo."
+```
+
+## Auditing Tools
+
+### Bustamante Chapter 1 Matrix
+
+```
+Clasificador de Razonamientos: Distingue Deductivo Válido vs. Inductivo Fuerte/Débil
+Inspector Muestral: Evalúa n (tamaño) y cobertura de variables relevantes (representatividad)
+Calculadora de Intervalo: Transforma porcentaje p y error e en [p - e, p + e] sobre base N
+```
+
+## When You're Stuck
+
+1. Verifica si el autor pretende que la conclusión se desprenda necesariamente (deductivo) o probablemente (inductivo).
+2. Recuerda que un razonamiento deductivo puede ser formalmente válido aunque sus premisas sean falsas (ej. "todos los luchadores son filósofos daneses"), mientras que un argumento inductivo con premisas falsas carece de solidez empírica.
+3. Si la población es completamente homogénea, una muestra pequeña basta; si es heterogénea, exige diversidad de estratos.
+4. Desconfía de todo porcentaje estadístico entre 51% y 55%: califícalo como fuerte según el estándar pero poco confiable.
+5. Si el usuario usa una analogía, evalúa cuánto interviene la apreciación subjetiva en las semejanzas relevantes.
+6. Formula una pregunta en `Probing Questions` pidiendo el tamaño poblacional si el prompt lo omite.
+7. Vincula con `@logic-categorical-syllogism-conditions` si el argumento pasa de porcentajes a cuantificadores universales ("todos", "ninguno").
+
+## Documentation Template
+
+Después de auditar el componente inductivo, documéntalo así:
+
+## Auditoría Inductiva: [Título del Bloque o Prompt]
+
+**Síntoma Detectado:** Conclusión taxativa o generalización sobre muestra sesgada (`n = X`, `N = Y`)
+
+**Causa Raíz (Bustamante Cap. 1):** [Falacia de muestra insuficiente / Falta de representatividad / Ausencia de calificador modal]
+
+**Corrección Aplicada:** Incorporación de operador modal probabilístico y acotación por intervalo de confianza
+
+**Secciones Modificadas:**
+- `<context>` y `<constraints>` del prompt optimizado
+
+**Verificación:** Comprobada la resistencia del enunciado ante variaciones marginales de la población
+
+## Key Principles
+
+- Nunca aceptes una conclusión inductiva redactada en forma taxativa absoluta
+- Exige simultáneamente tamaño suficiente y representatividad diversa en poblaciones heterogéneas
+- Califica como poco confiables las inferencias estadísticas cercanas al límite del 50%
+- Utiliza analogías lógicas formales para evidenciar saltos inferenciales inválidos
+- Distingue entre verdad empírica de las premisas y validez o fuerza de la estructura argumentativa
+
+## Related Skills
+
+- `Categorical-syllogism-conditions` - Silogismos categóricos y condiciones necesarias/suficientes
+- `Propositional-natural-deduction` - Validez deductiva y método indirecto
+- `Prompting-four-pillars-diagnostic` - Esquema diagnóstico de PCE
+
+## Limitations
+
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -1,5 +1,5 @@
 ---
-name: Bustamante_Matrix_prompting_self_corrected_compiler
+name: Prompting_self_corrected_compiler
 description: "Compiles finalized, highly optimized prompts with zero hallucinations using structured XML delimiters, constraint-first ordering, few-shot patterns, and end-anchoring for long contexts. Compilador de prompts optimizados, autocorrección de prompts, etiquetas XML estructuradas, diseño constraint first, anclaje temporal 2026."
 category: prompting
 risk: safe
@@ -342,11 +342,11 @@ Based on the information above, execute:
 
 ### Related Skills
 
-- `Bustamante_Matrix_skeleton_of_thought_planner` - Early identification of gaps in planning.
+- `Skeleton_of_thought_planner` - Early identification of gaps in planning.
 
-- `Bustamante_Matrix_architectural_intent_classifier` - Determination of the architectural layer.
+- `Architectural_intent_classifier` - Determination of the architectural layer.
 
-- `Bustamante_Matrix_prompting_probing_question_synthesizer` - Integration of aligned responses and assumptions.
+- `Prompting_probing_question_synthesizer` - Integration of aligned responses and assumptions.
 
 ## Limitations
 

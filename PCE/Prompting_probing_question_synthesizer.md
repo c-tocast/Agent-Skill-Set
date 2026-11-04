@@ -1,5 +1,5 @@
 ---
-name: Bustamante_Matrix_prompting_probing_question_synthesizer
+name: Prompting_probing_question_synthesizer
 description: "Formulates rigorous probing and verification questions to clarify ambiguities, validate missing preconditions, and establish human-in-the-loop alignment before pipeline execution. Sintetizador de preguntas de sondeo, preguntas de verificación, control de alineación con usuario, aclarar ambigüedad, pausar ejecución ante riesgo alto."
 category: prompting
 risk: safe

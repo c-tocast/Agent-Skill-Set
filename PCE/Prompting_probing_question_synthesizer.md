@@ -354,7 +354,7 @@ Assumption Declarer: Documents the default operational hypothesis for each uncer
 
 ### Related Skills
 
-`Prompting_intent_classifier` - Classification of the prompt’s intent 
+`Architectural_intent_classifier` - Classification of the prompt’s intent 
 
 `Skeleton_of_thought_planner.md` - Early identification of gaps in planning
 
